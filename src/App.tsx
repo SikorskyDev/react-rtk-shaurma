@@ -15,8 +15,8 @@ const NotFound = React.lazy(() => import(/* webpackChunkName: "NotFound" */ "./p
 function App() {
     return (
         <Routes>
-            <Route path="/" element={<MainLayout />}>
-                <Route path="/" element={<Home />} />
+            <Route path="https://SikorskyDev.github.io/react-rtk-shaurma/" element={<MainLayout />}>
+                <Route path="https://SikorskyDev.github.io/react-rtk-shaurma/" element={<Home />} />
                 <Route
                     path="cart"
                     element={
