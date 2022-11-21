@@ -15,10 +15,10 @@ const NotFound = React.lazy(() => import(/* webpackChunkName: "NotFound" */ "./p
 function App() {
     return (
         <Routes>
-            <Route path="/react-rtk-shaurma" element={<MainLayout />}>
-                <Route path="/react-rtk-shaurma" element={<Home />} />
+            <Route path="https://sikorskydev.github.io/react-rtk-shaurma/" element={<MainLayout />}>
+                <Route path="https://sikorskydev.github.io/react-rtk-shaurma/" element={<Home />} />
                 <Route
-                    path="/react-rtk-shaurma/cart"
+                    path="https://sikorskydev.github.io/react-rtk-shaurma/cart"
                     element={
                         <React.Suspense
                             fallback={
@@ -33,7 +33,7 @@ function App() {
                     }
                 />
                 <Route
-                    path="/react-rtk-shaurma/goods/:id"
+                    path="https://sikorskydev.github.io/react-rtk-shaurma/goods/:id"
                     element={
                         <React.Suspense
                             fallback={
