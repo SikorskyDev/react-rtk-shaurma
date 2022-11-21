@@ -1,26 +1,69 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import { Route, Routes } from "react-router-dom";
+
+import "./scss/app.scss";
+
+import Home from "./pages/Home";
+
+import MainLayout from "./layout/MainLayout";
+
+const Cart = React.lazy(() => import(/* webpackChunkName: "Cart" */ "./pages/Cart"));
+const FullGoods = React.lazy(() => import(/* webpackChunkName: "FullGoods" */ "./pages/FullGoods"));
+const NotFound = React.lazy(() => import(/* webpackChunkName: "NotFound" */ "./pages/NotFound"));
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Routes>
+            <Route path="/" element={<MainLayout />}>
+                <Route path="/" element={<Home />} />
+                <Route
+                    path="cart"
+                    element={
+                        <React.Suspense
+                            fallback={
+                                <div style={{ textAlign: "center" }}>
+                                    Відбувається завантаження корзини...
+                                    Будь-ласка, зачекайте
+                                </div>
+                            }
+                        >
+                            <Cart />
+                        </React.Suspense>
+                    }
+                />
+                <Route
+                    path="goods/:id"
+                    element={
+                        <React.Suspense
+                            fallback={
+                                <div style={{ textAlign: "center" }}>
+                                    Відбувається завантаження товарів...
+                                    Будь-ласка, зачекайте
+                                </div>
+                            }
+                        >
+                            <FullGoods />
+                        </React.Suspense>
+                    }
+                />
+                <Route
+                    path="*"
+                    element={
+                        <React.Suspense
+                            fallback={
+                                <div style={{ textAlign: "center" }}>
+                                    Завантаження...
+                                </div>
+                            }
+                        >
+                            <NotFound />
+                        </React.Suspense>
+                    }
+                />
+            </Route>
+        </Routes>
+    );
 }
 
 export default App;
