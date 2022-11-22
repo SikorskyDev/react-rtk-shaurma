@@ -39,7 +39,7 @@ export const CartItemBlock: React.FC<CartItemProps> = ({
                 <div className="cart__item-body-img">
                     <img
                         className="pizza-block__image"
-                        src={imageUrl}
+                        src={`${process.env.PUBLIC_URL}/${imageUrl}`}
                         alt="Pizza"
                     />
                 </div>
