@@ -70,21 +70,6 @@ export const GoodsBlock: React.FC<GoodsBlockProps> = ({
                             );
                         })}
                     </ul>
-                    {/* <ul>
-                        {sizes.map((value, index) => {
-                            return (
-                                <li
-                                    key={index.toString()}
-                                    className={
-                                        activeSize === index ? "active" : ""
-                                    }
-                                    onClick={() => setActiveSize(index)}
-                                >
-                                    {value} см.
-                                </li>
-                            );
-                        })}
-                    </ul> */}
                 </div>
                 <div className="pizza-block__bottom">
                     <div className="pizza-block__price">{price} ₴</div>

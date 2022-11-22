@@ -39,6 +39,7 @@ export default function FullGoods() {
             <h2 className="foolGoods__title">{goods.title}</h2>
             <p className="foolGoods__desc">{goods.description}</p>
             <h4 className="foolGoods__price">{goods.price} грн.</h4>
+            
             <Link
                 to="/"
                 className="button button--outline button--add go-back-btn foolGoods__btn"
