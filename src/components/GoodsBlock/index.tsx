@@ -49,7 +49,7 @@ export const GoodsBlock: React.FC<GoodsBlockProps> = ({
                 <Link key={id} to={`/goods/${id}`}>
                     <img
                         className="pizza-block__image"
-                        src={imageUrl}
+                        src={`${process.env.PUBLIC_URL}/${imageUrl}`}
                         alt="Pizza"
                     />
                     <h4 className="pizza-block__title">{title}</h4>

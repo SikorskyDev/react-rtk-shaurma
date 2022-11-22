@@ -35,7 +35,7 @@ export default function FullGoods() {
 
     return (
         <div className="container foolGoods">
-            <img src={goods.imageUrl} className="foolGoods__img" />
+            <img src={`${process.env.PUBLIC_URL}/${goods.imageUrl}`} className="foolGoods__img" />
             <h2 className="foolGoods__title">{goods.title}</h2>
             <p className="foolGoods__desc">{goods.description}</p>
             <h4 className="foolGoods__price">{goods.price} грн.</h4>
